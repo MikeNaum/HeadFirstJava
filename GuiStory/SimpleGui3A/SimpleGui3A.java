@@ -5,6 +5,9 @@ import java.awt.*;
 public class SimpleGui3A implements ActionListener {
 
     JFrame frame;
+	JButton buttonLabel;
+	JButton buttonColor;
+	JLabel label;
 
     public static void main(String[] args) {
         SimpleGui3A gui = new SimpleGui3A();
@@ -14,15 +17,15 @@ public class SimpleGui3A implements ActionListener {
     public void go() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 500);
+        frame.setSize(500, 300);
 
-        JButton buttonLabel = new JButton("Change label");
+        buttonLabel = new JButton("Change label");
         buttonLabel.addActionListener(this);
 
-        JButton buttonColor = new JButton("Change color");
+        buttonColor = new JButton("Change color");
         buttonColor.addActionListener(this);
 
-        JLabel label = new JLabel("Buttons no clicked");
+        label = new JLabel("Buttons no clicked");
 
         MyDrawPanel myDrawPanel = new MyDrawPanel();
         
@@ -34,8 +37,8 @@ public class SimpleGui3A implements ActionListener {
         frame.setVisible(true);
     }
 
-    public void actionPerformed(ActionListener event) {
-        if(event.getSource() = buttonColor) {
+    public void actionPerformed(ActionEvent event) {
+        if(event.getSource() == buttonColor) {
             frame.repaint();
             label.setText("Button Color clicked");
         } else {
